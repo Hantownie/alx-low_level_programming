@@ -1,12 +1,12 @@
 #include <stdio.h>
 /**
- * print_with_puts - prints without printf
- * nb: followed by new line
+ * main- This contains the puts
+ * * Return:zero
  */
 
 int main(void)
 {
-	char pro[] = "\"Programming is like building a multilingual puzzle\n";
+	char pro[] = "\"Programming is like building a multilingual puzzle";
 
 	puts(pro);
 	return (0);
