@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/*
- * main - print random number
+/* 
+ * main - random number printer
  * return: 0
+*/
+/*
+ * Description: this code prints a random number
 */
 int main(void)
 {
