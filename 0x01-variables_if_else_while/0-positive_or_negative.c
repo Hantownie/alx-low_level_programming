@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* 
+/*
  * main - random number printer
  * return: 0
 */
