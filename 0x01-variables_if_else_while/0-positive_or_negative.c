@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/*
+/* more headers goes there */
+/**
  * main - random number printer
+ * Description - this prints the random number
  * return: 0
 */
-/*
- * Description: this code prints a random number
-*/
+/* betty style doc for function main goes there */
+
 int main(void)
 {
 	int n;
