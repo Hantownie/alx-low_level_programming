@@ -5,7 +5,7 @@
 /**
  * main - random number printer
  * Description - this prints the random number
- * return: 0
+ * Return: 0 success
 */
 /* betty style doc for function main goes there */
 
