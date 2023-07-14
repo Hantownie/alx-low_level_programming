@@ -12,6 +12,7 @@ int main(void)
 	{
 		printf("%d", di);
 	}
+	putchar('\n');
 	return (0);
 
 }
