@@ -6,7 +6,9 @@
 */
 int main(void)
 {
-	int a, b, c;
+	int a;
+	int b;
+	int c;
 
 	for (a = 0; a <= 7; a++)
 	{
@@ -28,5 +30,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-
 }
