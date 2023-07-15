@@ -10,7 +10,7 @@ int main(void)
 
 	for (nor = 0; nor <= 8; nor++)
 	{
-		for (mor = 0; mor <= 9; mor++)
+		for (mor = 0+1; mor <= 9; mor++)
 		{
 			putchar(nor + '0');
 			putchar (mor + '0');
