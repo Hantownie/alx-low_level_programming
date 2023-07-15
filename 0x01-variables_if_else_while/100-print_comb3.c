@@ -8,9 +8,9 @@ int main(void)
 {
 	int nor, mor;
 
-	for (nor = 0; nor <= 8; nor++)
+	for (nor = 0; nor <= 9; nor++)
 	{
-		for (mor = 0+1; mor <= 9; mor++)
+		for (mor = 0 + 1; mor <= 9; mor++)
 		{
 			putchar(nor + '0');
 			putchar (mor + '0');
