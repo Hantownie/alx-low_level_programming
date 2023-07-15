@@ -13,8 +13,8 @@ int main(void)
 		putchar(di + '0');
 		if (di < 9)
 		{
-			putchar(",");
-			putchar(" ");
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
