@@ -14,7 +14,7 @@ int main(void)
 		{
 			putchar(nor + '0');
 			putchar (mor + '0');
-			if (nor < 8 || j < 9)
+			if (nor < 8 || mor < 9)
 			{
 				putchar(',');
 				putchar(' ');
