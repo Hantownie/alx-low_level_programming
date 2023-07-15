@@ -10,7 +10,7 @@ int main(void)
 
 	for (a = 0; a <= 98; a++)
 	{
-		for (b = a; b <= 99; b++)
+		for (b = a + 1; b <= 99; b++)
 		{
 			int f1 = a / 10;
 			int f2 = a % 10;
