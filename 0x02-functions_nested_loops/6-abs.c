@@ -4,7 +4,7 @@
  * @n: the character
  * Return: it returns positive or negative number
 */
-int _abs(int n);
+int _abs(int n)
 {
 	if (n > 0)
 	{
