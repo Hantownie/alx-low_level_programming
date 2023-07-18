@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - entry level
+ * main - prints alphabet
  * Description - this prints lowercase alphabet
  * Return: 0 success
 */
@@ -10,7 +10,7 @@ int main(void)
 
 	for (al = 'a'; al <= 'z'; al++)
 	{
-		_putchar(al);
+		print_alphabet(_putchar(al));
 	}
 	_putchar('\n');
 	return (0);
