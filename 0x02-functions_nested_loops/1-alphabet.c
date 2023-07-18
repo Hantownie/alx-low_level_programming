@@ -6,12 +6,7 @@
 */
 int main(void)
 {
-	int al;
-
-	for (al = 'a'; al <= 'z'; al++)
-	{
-		print_alphabet(_putchar(al));
-	}
+	print_alphabet();
 	_putchar('\n');
 	return (0);
 }

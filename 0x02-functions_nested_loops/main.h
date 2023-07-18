@@ -1,2 +1,7 @@
 int _putchar(char);
-void print_alphabet(void);
+char print_alphabet()
+{
+	char al;
+	for ( al = 'a'; al <= 'z'; al++ )
+		_putchar(al);
+}
