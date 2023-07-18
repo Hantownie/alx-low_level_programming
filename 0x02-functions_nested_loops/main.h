@@ -1,4 +1,4 @@
-int _putchar(char);
+char _putchar(char);
 char print_alphabet()
 {
 	char al;
