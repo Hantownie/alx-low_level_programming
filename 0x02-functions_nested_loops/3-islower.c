@@ -2,7 +2,7 @@
 /**
  * _islower - this checks if the character case is lower
  * @c: the character
- * Return: it returns 0 or 1
+ * Return: it returns zero or one
 */
 int _islower(int c)
 {
@@ -14,4 +14,5 @@ int _islower(int c)
 	{
 		_putchar(0);
 	}
+	return;
 }
