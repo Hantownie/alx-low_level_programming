@@ -6,13 +6,13 @@
 */
 int _abs(int n)
 {
-	if (n > 0)
+	if (n < 0)
 	{
-		return (n);
+		n = (-1) * n;
 	}
 	else
 	{
-		_putchar('-');
-		return (n);
+		n = n;
 	}
+	return (n);
 }
