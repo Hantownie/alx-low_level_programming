@@ -3,7 +3,7 @@
  * jack_bauer - this prints every minute of the day
  * Return: it returns the hours and minutes
 */
-void jack_bauer(void);
+void jack_bauer(void)
 {
 	int min, hr;
 
