@@ -13,7 +13,7 @@ void times_table(void)
 		{
 			int tbl = i * t;
 
-			if (tbl < 10;)
+			if (tbl < 10)
 			{
 				_putchar((tbl % 10) + '0');
 			}
