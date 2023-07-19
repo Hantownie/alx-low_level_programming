@@ -25,7 +25,7 @@ int main(void)
 		{
 			b = a + b;
 			a = b - a;
-			printf(", %d", b);
+			printf(", %ld", b);
 		}
 	}
 	printf("\n");
