@@ -16,7 +16,7 @@ void puts_half(char *str)
 	b = (inc / 2);
 	if ((inc % 2) == 1)
 	{
-		b = ((inc + 1) / 2));
+		b = ((inc + 1) / 2);
 	}
 	for (a = b; str[a] != '\0'; a++)
 	{
