@@ -25,7 +25,7 @@ int _strlen_recursion(char *s)
 */
 int pcheck(int in, int l, char *s)
 {
-	if (len > 0)
+	if (l > 0)
 	{
 		if (s[in] == s[l])
 		{
