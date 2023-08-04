@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (n < 0)
 	{
-		printf("%d\n", 0);
+		printf("0\n");
 		return (0);
 	}
 	if (argc != 2)
