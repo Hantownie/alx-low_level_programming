@@ -5,19 +5,20 @@
  * main - entry level
  * @argc: argument count
  * @argv: argument vector
- * Description - this prints multiplication
+ * Description - this prints cent change
  * Return: 0 success
 */
 int main(int argc, char *argv[])
 {
 	int cents[] = {25, 10, 5, 2, 1};
 	int n = atoi(argv[1]);
-	int res = 1;
+	int res = 0;
 	int i;
 
 	if (n < 0)
 	{
 		printf("%d\n", 0);
+		return (0);
 	}
 	if (argc != 2)
 	{
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = 0; i < 5 && n >= 0; i++)
 	{
-		while (n > cents[i])
+		while (n >= cents[i])
 		{
 			res++;
 			num -= cents[i];
