@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		while (n >= cents[i])
 		{
 			res++;
-			num -= cents[i];
+			n -= cents[i];
 		}
 	}
 	printf("%d\n", res);
