@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	int n = atoi(argv[1]);
 	int res = 0;
 	int i;
+	int loop = sizeof(cents) / sizeof(coins[0]);
 
 	if (n < 0)
 	{
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < loop; i++)
 	{
 		if (n > 0)
 		{
