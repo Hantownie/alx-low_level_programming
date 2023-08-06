@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int n = atoi(argv[1]);
 	int res = 0;
 	int i;
-	int loop = sizeof(cents) / sizeof(coins[0]);
+	int loop = sizeof(cents) / sizeof(cents[0]);
 
 	if (n < 0)
 	{
