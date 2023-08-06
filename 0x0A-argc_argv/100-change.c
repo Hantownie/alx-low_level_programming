@@ -10,20 +10,22 @@
 int main(int argc, char *argv[])
 {
 	int change[] = {25, 10, 5, 2, 1};
-	int cents = atoi(argv[1]);
+	int cents;
 	int res = 0;
 	int i;
 	int loop = sizeof(change) / sizeof(change[0]);
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	cents = atoi(argv[1]);
 
 	if (cents < 0)
 	{
 		printf("0\n");
 		return (0);
-	}
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
 	}
 	for (i = 0; i < loop && cents > 0; i++)
 	{
