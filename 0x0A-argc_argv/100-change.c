@@ -26,10 +26,10 @@ int main(int argc, char *argv[])
 	}
 	for (i = 0; i < 5; i++)
 	{
-		while (n >= cents[i])
+		if (n > 0)
 		{
-			res++;
-			n -= cents[i];
+			res += n / cents[i];
+			n = n % cents[i};
 		}
 	}
 	printf("%d\n", res);
