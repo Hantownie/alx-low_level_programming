@@ -9,13 +9,12 @@
 */
 int main(int argc, char *argv[])
 {
-	int cents[] = {25, 10, 5, 2, 1};
-	int n = atoi(argv[1]);
+	int change[] = {25, 10, 5, 2, 1};
+	int cents = atoi(argv[1]);
 	int res = 0;
 	int i;
-	int loop = sizeof(cents) / sizeof(cents[0]);
 
-	if (n < 0)
+	if (cents < 0)
 	{
 		printf("0\n");
 		return (0);
@@ -25,12 +24,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 0; i < loop; i++)
+	for (i = 0; i < 5 && cents >= 0; i++)
 	{
-		if (n > 0)
+		while (cents >= change[i])
 		{
-			res += n / cents[i];
-			n = n % cents[i};
+			res ++;
+			cents -= change[i];
 		}
 	}
 	printf("%d\n", res);
