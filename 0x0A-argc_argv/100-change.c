@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	int cents = atoi(argv[1]);
 	int res = 0;
 	int i;
+	int loop = sizeof(change) / sizeof(change[0]);
 
 	if (cents < 0)
 	{
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 0; i < 5 && cents > 0; i++)
+	for (i = 0; i < loop && cents > 0; i++)
 	{
 		while (cents >= change[i])
 		{
