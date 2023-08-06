@@ -24,11 +24,11 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 0; i < 5 && cents >= 0; i++)
+	for (i = 0; i < 5 && cents > 0; i++)
 	{
 		while (cents >= change[i])
 		{
-			res ++;
+			res++;
 			cents -= change[i];
 		}
 	}
