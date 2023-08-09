@@ -31,10 +31,10 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 	}
-	for (x = 0; x < height; x++)
+	for (i = 0; i < height; i++)
 	{
-		for (y = 0; y < width; y++)
-			ar[x][y] = 0;
+		for (j = 0; j < width; j++)
+			ar[i][j] = 0;
 	}
 	return (ar);
 }
