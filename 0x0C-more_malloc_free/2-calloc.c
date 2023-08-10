@@ -13,7 +13,7 @@ char *setz(char *arr, char o, unsigned int n)
 {
 	unsigned int i;
 
-	for (i == 0; i < n; i++)
+	for (i = 0; i < n; i++)
 		arr[i] = o;
 	return (arr);
 }
