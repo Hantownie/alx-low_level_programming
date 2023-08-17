@@ -29,7 +29,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	}
 	if ((*opr == '/' && b == 0) || (*opr == '%' && b == 0))
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(100);
 	}
 	printf("%d\n", get_op_func(opr)(a, b));
