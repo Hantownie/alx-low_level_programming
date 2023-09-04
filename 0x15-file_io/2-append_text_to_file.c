@@ -21,10 +21,13 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		for (i = 0; text_content[i];)
 			i++;
+		temp = write(op, text_content, i);
+		if (temp == -1)
+		{
+			close(op);
+			return (-1);
+		}
 	}
-	temp = write(op, text_content, i);
-	if (temp == -1)
-		return (-1);
 	close(op);
 	return (1);
 }
