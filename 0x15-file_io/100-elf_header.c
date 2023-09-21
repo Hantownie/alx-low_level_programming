@@ -48,7 +48,7 @@ void prmagic(unsigned char *e_ident)
 {
 	int index;
 
-	printf("Magic:");
+	printf(" Magic: ");
 	for (index = 0; index < EI_NIDENT; index++)
 	{
 		printf("%02x", e_ident[index]);
@@ -283,7 +283,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	prosabi(header->e_ident);
 	prabi(header->e_ident);
 	prtype(header->e_type, header->e_ident);
-	prentry(header->e_type, header->e_ident);
+	prentry(header->e_entry, header->e_ident);
 
 	free(header);
 	celf(op);
