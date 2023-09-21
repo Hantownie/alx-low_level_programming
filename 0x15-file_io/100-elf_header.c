@@ -48,7 +48,7 @@ void prmagic(unsigned char *e_ident)
 {
 	int index;
 
-	printf(" Magic: ");
+	printf(" Magic:   ");
 	for (index = 0; index < EI_NIDENT; index++)
 	{
 		printf("%02x", e_ident[index]);
@@ -64,7 +64,7 @@ void prmagic(unsigned char *e_ident)
  */
 void prclass(unsigned char *e_ident)
 {
-	printf(" Class: ");
+	printf(" Class:                             ");
 	switch (e_ident[EI_CLASS])
 	{
 		case ELFCLASSNONE:
@@ -86,7 +86,7 @@ void prclass(unsigned char *e_ident)
  */
 void prdata(unsigned char *e_ident)
 {
-	printf(" Data: ");
+	printf(" Data:                              ");
 	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
@@ -108,11 +108,11 @@ void prdata(unsigned char *e_ident)
  */
 void prversion(unsigned char *e_ident)
 {
-	printf(" Version: %d", e_ident[EI_VERSION]);
+	printf(" Version:                           %d", e_ident[EI_VERSION]);
 	switch (e_ident[EI_VERSION])
 	{
 		case EV_CURRENT:
-			printf("(current)\n");
+			printf(" (current)\n");
 			break;
 		default:
 			printf("\n");
@@ -126,7 +126,7 @@ void prversion(unsigned char *e_ident)
  */
 void prosabi(unsigned char *e_ident)
 {
-	printf(" OS/ABI: ");
+	printf(" OS/ABI:                            ");
 	switch (e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
@@ -170,7 +170,7 @@ void prosabi(unsigned char *e_ident)
  */
 void prabi(unsigned char *e_ident)
 {
-	printf(" ABI Version: %d\n", e_ident[EI_ABIVERSION]);
+	printf(" ABI Version:                       %d\n", e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -182,7 +182,7 @@ void prtype(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
-	printf(" Type: ");
+	printf(" Type:                              ");
 	switch (e_type)
 	{
 		case ET_NONE:
@@ -212,7 +212,7 @@ void prtype(unsigned int e_type, unsigned char *e_ident)
  */
 void prentry(unsigned long int e_entry, unsigned char *e_ident)
 {
-	printf(" Entry point address: ");
+	printf(" Entry point address:               ");
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		e_entry = ((e_entry << 8) & 0xFF00FF00) |
