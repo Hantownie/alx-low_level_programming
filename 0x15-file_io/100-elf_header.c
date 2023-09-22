@@ -6,24 +6,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void chelf(unsigned char *e_ident);
-void prmagic(unsigned char *e_ident);
-void prclass(unsigned char *e_ident);
-void prdata(unsigned char *e_ident);
-void prversion(unsigned char *e_ident);
-void prabi(unsigned char *e_ident);
-void prosabi(unsigned char *e_ident);
-void prtype(unsigned int e_type, unsigned char *e_ident);
-void prentry(unsigned long int e_entry, unsigned char *e_ident);
-void celf(int elf);
+void check_elf(unsigned char *e_ident);
+void print_magic(unsigned char *e_ident);
+void print_class(unsigned char *e_ident);
+void print_data(unsigned char *e_ident);
+void print_version(unsigned char *e_ident);
+void print_abi(unsigned char *e_ident);
+void print_osabi(unsigned char *e_ident);
+void print_type(unsigned int e_type, unsigned char *e_ident);
+void print_entry(unsigned long int e_entry, unsigned char *e_ident);
+void close_elf(int elf);
 
 /**
- * chelf - Checks if a file is an ELF file.
+ * check_elf - Checks if a file is an ELF file.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
  *
  * Description: If the file is not an ELF file - exit code 98.
  */
-void chelf(unsigned char *e_ident)
+void check_elf(unsigned char *e_ident)
 {
 	int index;
 
@@ -39,12 +39,12 @@ void chelf(unsigned char *e_ident)
 	}
 }
 /**
- * prmagic - Prints the magic numbers of an ELF header.
+ * print_magic - Prints the magic numbers of an ELF header.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
  *
  * Description: Magic numbers are separated by spaces.
  */
-void prmagic(unsigned char *e_ident)
+void print_magic(unsigned char *e_ident)
 {
 	int index;
 
@@ -59,10 +59,10 @@ void prmagic(unsigned char *e_ident)
 	}
 }
 /**
- * prclass - Prints the class of an ELF header.
+ * print_class - Prints the class of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
  */
-void prclass(unsigned char *e_ident)
+void print_class(unsigned char *e_ident)
 {
 	printf(" Class:                             ");
 	switch (e_ident[EI_CLASS])
@@ -81,10 +81,10 @@ void prclass(unsigned char *e_ident)
 	}
 }
 /**
- * prdata - Prints the data of an ELF header.
+ * print_data - Prints the data of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
  */
-void prdata(unsigned char *e_ident)
+void print_data(unsigned char *e_ident)
 {
 	printf(" Data:                              ");
 	switch (e_ident[EI_DATA])
@@ -103,10 +103,10 @@ void prdata(unsigned char *e_ident)
 	}
 }
 /**
- * prversion - Prints the version of an ELF header.
+ * print_version - Prints the version of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
  */
-void prversion(unsigned char *e_ident)
+void print_version(unsigned char *e_ident)
 {
 	printf(" Version:                           %d", e_ident[EI_VERSION]);
 	switch (e_ident[EI_VERSION])
@@ -121,10 +121,10 @@ void prversion(unsigned char *e_ident)
 }
 
 /**
- * prosabi - Prints the OS/ABI of an ELF header.
+ * print_osabi - Prints the OS/ABI of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
  */
-void prosabi(unsigned char *e_ident)
+void print_osabi(unsigned char *e_ident)
 {
 	printf(" OS/ABI:                            ");
 	switch (e_ident[EI_OSABI])
@@ -165,20 +165,20 @@ void prosabi(unsigned char *e_ident)
 }
 
 /**
- * prabi - Prints the ABI version of an ELF header.
+ * print_abi - Prints the ABI version of an ELF header.
  * @e_ident: A pointer to an array containing the ELF ABI version.
  */
-void prabi(unsigned char *e_ident)
+void print_abi(unsigned char *e_ident)
 {
 	printf(" ABI Version:                       %d\n", e_ident[EI_ABIVERSION]);
 }
 
 /**
- * prtype - Prints the type of an ELF header.
+ * print_type - Prints the type of an ELF header.
  * @e_type: The ELF type.
  * @e_ident: A pointer to an array containing the ELF class.
  */
-void prtype(unsigned int e_type, unsigned char *e_ident)
+void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
@@ -206,11 +206,11 @@ void prtype(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * prentry - Prints the entry point of an ELF header.
+ * print_entry - Prints the entry point of an ELF header.
  * @e_entry: The address of the ELF entry point.
  * @e_ident: A pointer to an array containing the ELF class.
  */
-void prentry(unsigned long int e_entry, unsigned char *e_ident)
+void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
 	printf(" Entry point address:               ");
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
@@ -225,12 +225,12 @@ void prentry(unsigned long int e_entry, unsigned char *e_ident)
 		printf("%#lx\n", e_entry);
 }
 /**
- * celf - Closes an ELF file.
+ * close_elf - Closes an ELF file.
  * @elf: The file descriptor of the ELF file.
  *
  * Description: If the file cannot be closed - exit code 98.
  */
-void celf(int elf)
+void close_elf(int elf)
 {
 	if (close(elf) == -1)
 	{
@@ -262,7 +262,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
-		celf(op);
+		close_elf(op);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
@@ -270,22 +270,22 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (re == -1)
 	{
 		free(header);
-		celf(op);
+		close_elf(op);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-	chelf(header->e_ident);
+	check_elf(header->e_ident);
 	printf("ELF Header:\n");
-	prmagic(header->e_ident);
-	prclass(header->e_ident);
-	prdata(header->e_ident);
-	prversion(header->e_ident);
-	prosabi(header->e_ident);
-	prabi(header->e_ident);
-	prtype(header->e_type, header->e_ident);
-	prentry(header->e_entry, header->e_ident);
+	print_magic(header->e_ident);
+	print_class(header->e_ident);
+	print_data(header->e_ident);
+	print_version(header->e_ident);
+	print_osabi(header->e_ident);
+	print_abi(header->e_ident);
+	print_type(header->e_type, header->e_ident);
+	print_entry(header->e_entry, header->e_ident);
 
 	free(header);
-	celf(op);
+	close_elf(op);
 	return (0);
 }
